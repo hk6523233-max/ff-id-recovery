@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FF ID Recovery</title>
+  <title>FF ID Recovery - Demo</title>
 
   <style>
     body {
@@ -31,7 +31,10 @@
       margin-bottom: 6px;
     }
 
-    input, select, textarea, button {
+    input,
+    select,
+    textarea,
+    button {
       width: 100%;
       box-sizing: border-box;
       padding: 12px;
@@ -64,4 +67,59 @@
 
     <form id="recoveryForm">
 
-     
+      <label for="uid">Free Fire UID</label>
+      <input
+        type="text"
+        id="uid"
+        placeholder="Enter your UID"
+        required
+      >
+
+      <label for="reason">Reason</label>
+      <select id="reason" required>
+        <option value="">Select reason</option>
+        <option>False Ban</option>
+        <option>Account Compromised</option>
+        <option>Unknown</option>
+        <option>Other</option>
+      </select>
+
+      <label for="message">Appeal Message</label>
+      <textarea
+        id="message"
+        rows="5"
+        maxlength="500"
+        placeholder="Explain why you believe the ban was incorrect..."
+        required
+      ></textarea>
+
+      <button type="submit">Submit Appeal</button>
+
+    </form>
+
+    <div id="result" class="result" style="display:none;"></div>
+
+    <p>
+      Demo only. This page does not access, modify, or bypass any Free Fire
+      account or server.
+    </p>
+  </div>
+
+  <script>
+    document.getElementById("recoveryForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const uid = document.getElementById("uid").value;
+      const reason = document.getElementById("reason").value;
+
+      const result = document.getElementById("result");
+
+      result.style.display = "block";
+      result.textContent =
+        "Demo appeal submitted for UID " + uid +
+        " with reason: " + reason + ".";
+    });
+  </script>
+
+</body>
+</html>     
