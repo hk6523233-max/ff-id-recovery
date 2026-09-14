@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FF ID Recovery - Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card">
+
+      <h1>FF ID Recovery</h1>
+      <p class="subtitle">Unban Appeal — Demo</p>
+
+      <form id="appealForm">
+
+        <label for="uid">Free Fire UID</label>
+        <input
+          type="text"
+          id="uid"
+          placeholder="Enter your UID"
+          maxlength="15"
+          required
+        >
+
+        <label for="reason">Ban Reason</label>
+        <select id="reason" required>
+          <option value="">Select reason</option>
+          <option value="False Ban">
+            I believe my ID was falsely banned
+          </option>
+          <option value="Account Compromised">
+            My account was compromised
+          </option>
+          <option value="Unknown">
+            I don't know the reason
+          </option>
+          <option value="Other">
+            Other
+          </option>
+        </select>
+
+        <label for="message">Appeal Message</label>
+        <textarea
+          id="message"
+          rows="5"
+          maxlength="500"
+          placeholder="Explain why you believe the ban should be reviewed..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          Submit Appeal
+        </button>
+
+      </form>
+
+      <div id="result" class="result hidden"></div>
+
+      <p class="notice">
+        Demo only. This website does not access or modify Garena servers.
+      </p>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
